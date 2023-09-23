@@ -13,7 +13,9 @@ const App = () => {
             </div>
 
             <div className='rowCommandLine'>
-                <CommandLine />
+                <div className='resultbox'>
+                    <CommandLine />
+                </div>
             </div>
             <div className='row'>
                 <MyButton name=''/>

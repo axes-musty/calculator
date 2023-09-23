@@ -1,3 +1,9 @@
 # My first app using React from scratch
 
-I put all of my knowledge from [Developing Front-End Apps with React](https://www.coursera.org/professional-certificates/ibm-frontend-developer)
+I tried to use all the knowledge from the [Developing Front-End Apps with React](https://www.coursera.org/professional-certificates/ibm-frontend-developer) course.
+
+The calculator does not support fractions.
+
+Todo:
+    Fractions
+    Repet action on "=" press

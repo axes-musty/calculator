@@ -2,15 +2,27 @@ let CalcResult = (localContent) => {
     const specialChars = ['+', '-', '*', '/'];
     let result = 0;
     let next_operation = '';
-    let specialCharsNo  = 0
+    let specialCharsMap = []
+
+    console.log('CalcResult')
 
     for (let counter = 0; counter < String(localContent).length; counter++) {
         let char = [...localContent][counter]
-        if (specialChars.includes(char)){
-            specialCharsNo++
+        if (['*', '/'].includes(char)){
+            specialCharsMap.push([char, counter])
             /* zamiast tego zrób liste znak + index i zacznij liczenie od srodkowego */
         }
     }
+    [...specialCharsMap].map((elem) =>
+         console.log('map ' + elem)
+
+        );
+
+    [...specialCharsMap].sort().map((elem) =>
+         console.log('map ' + elem)
+
+        );
+    
     /* dla kazdego entry z powyzszej listy znajdz lewa strone i prawa strone i policz wynik */
 
     [...localContent].forEach(char => {

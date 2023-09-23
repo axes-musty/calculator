@@ -4,7 +4,7 @@ import { AppContext } from '../context/AppContext';
 import CalcResult from './CalcResult';
 
 const CalcButton = (props) => {
-    const { calcState, content, dispatch } = useContext(AppContext);
+    const { calcState, content, dispatch, equation } = useContext(AppContext);
 
     let handleClick = () => {
         switch (calcState){
@@ -12,28 +12,21 @@ const CalcButton = (props) => {
                 alert ("Wpisz działanie do obliczenia!")
                 break
             case 1:
-                dispatch({
-                    type: 'SET_CONTENT',
-                    payload: CalcResult(content),
-                });
-                dispatch({
-                    type: 'SET_CALC_STATE',
-                    payload: 2,
-                });
-                break   
+                alert ("Wpisz operator!")
+                break
             case 2:
+                let localResult = CalcResult(equation)
                 dispatch({
                     type: 'SET_CONTENT',
-                    payload: '',
+                    payload: localResult,
                 });
                 dispatch({
-                    type: 'SET_CALC_STATE',
-                    payload: 0,
+                    type: 'SET_EQUATION',
+                    payload: localResult,
                 });
                 break 
             default:
-                break 
-
+                break
         }
     }
     let classO = props.classO

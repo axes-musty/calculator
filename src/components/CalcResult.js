@@ -4,8 +4,6 @@ let CalcResult = (localContent) => {
     let next_operation = '';
     let specialCharsMap = []
 
-    console.log('CalcResult')
-
     for (let counter = 0; counter < String(localContent).length; counter++) {
         let char = [...localContent][counter]
         if (['*', '/'].includes(char)){

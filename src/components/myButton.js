@@ -21,7 +21,6 @@ const MyButton = (props) => {
         else {
             if (calcSetting){
                 if (!specialChars.includes(e)){
-                    console.log('cyfra')
                     /* cyfra */
                     dispatch({
                         type: 'APPEND_CONTENT',
@@ -47,7 +46,6 @@ const MyButton = (props) => {
                             });
                     }
                 } else {
-                    console.log('operator')
                     /* operator */
                     if (calcState === 1){ 
                     dispatch({

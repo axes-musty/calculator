@@ -20,15 +20,14 @@ export const AppReducer = (state, action) => {
                 ...state,
             };
         case 'REPLACE_OPERATOR':
-            
-            [...state.equation][String(state.equation).length()] = action.payload
+            state.equation = state.equation.slice(-2, -1) + action.payload
             return {
                 ...state,
             };
         case 'SET_CALC_STATE':
-            console.log('PRZED calcState:' + state.calcState)
+
             state.calcState = action.payload
-            console.log('PO calcState:' + state.calcState)
+
             return {
                 ...state,
             };

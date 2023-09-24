@@ -26,8 +26,12 @@ export const AppReducer = (state, action) => {
                 ...state,
             };
         case 'SET_CALC_STATE':
+            console.log('PRZED calcState:' + state.calcState)
             state.calcState = action.payload
-            return state
+            console.log('PO calcState:' + state.calcState)
+            return {
+                ...state,
+            };
         case 'SET_EQUATION':
             state.equation = action.payload;
             return {
@@ -45,15 +49,26 @@ export const AppReducer = (state, action) => {
             };
             default:
                 return state;
+        case 'SET_LAST_OPERATION':
+            state.lastOperation = action.payload;
+            return {
+                ...state,
+            };
+        case 'CLEAR_LAST_OPERATION':
+            state.lastOperation = '';
+            return {
+                ...state,
+            };
     }
 }
 
 export const AppContext = createContext();
 const initialState = {
     content: '',
-    calcState: 0, /* 0 - stan bez inputu, 1 - stan z wpisanym operatorem 2 - stan gotowy do obliczenia */
+    calcState: 0, /* 0 - stan bez inputu, 1 - stan z wpisanym operatorem 2 - stan gotowy do obliczenia 3 - powtorzenie ostaniej operacji*/
     calcSetting: true,
     equation: '',
+    lastOperation: '',
 }
 export const AppProvider = (props) => {
     const [state, dispatch] = useReducer(AppReducer, initialState);
@@ -64,6 +79,7 @@ export const AppProvider = (props) => {
                 calcState: state.calcState,
                 calcSetting: state.calcSetting,
                 equation: state.equation,
+                lastOperation: state.lastOperation,
                 dispatch,
             }}
         >

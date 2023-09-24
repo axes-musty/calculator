@@ -13,16 +13,6 @@ let CalcResult = (localContent) => {
             /* zamiast tego zrób liste znak + index i zacznij liczenie od srodkowego */
         }
     }
-    [...specialCharsMap].map((elem) =>
-         console.log('map ' + elem)
-
-        );
-
-    [...specialCharsMap].sort().map((elem) =>
-         console.log('map ' + elem)
-
-        );
-    
     /* dla kazdego entry z powyzszej listy znajdz lewa strone i prawa strone i policz wynik */
 
     [...localContent].forEach(char => {

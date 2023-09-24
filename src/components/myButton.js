@@ -3,10 +3,10 @@ import '../App.css';
 import { AppContext } from '../context/AppContext';
 
 const MyButton = (props) => {
-    const { dispatch, calcSetting, equation, calcState } = useContext(AppContext);
+    const { dispatch, calcSetting, calcState } = useContext(AppContext);
     const specialChars = ['+', '-', '*', '/'];
     let handleClick = (e) => {
-        if(e === 'C') {
+        if(e === 'C') { /* clear button pressed */
             dispatch({
                 type: 'CLEAR_CONTENT',
                 });
@@ -19,7 +19,6 @@ const MyButton = (props) => {
                 });
         }
         else {
-            console.log('calcState:' + calcState)
             if (calcSetting){
                 if (!specialChars.includes(e)){
                     console.log('cyfra')
@@ -79,10 +78,7 @@ const MyButton = (props) => {
                     payload: 1,
                     });
             }
-
         }
-        
-
     }
     let classO = props.classO
     if (typeof(classO) === 'undefined'){

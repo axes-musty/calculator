@@ -4,6 +4,4 @@ I tried to use all the knowledge from the [Developing Front-End Apps with React]
 
 The calculator does not support fractions.
 
-Todo:
-    Fractions
-    Repet action on "=" press
+Todo: Fractions, Translate all text to English, Change operator button color after pressed

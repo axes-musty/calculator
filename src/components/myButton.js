@@ -2,11 +2,26 @@ import React, { useContext } from 'react';
 import '../App.css';
 import { AppContext } from '../context/AppContext';
 
+
+const specialChars = ['+', '-', '*', '/'];
+
+const ColorPressedOperator = (pressedOperator) => {
+    [...specialChars].forEach((char) => {
+        if (char === pressedOperator){
+            document.getElementById(char).className = "btn_marginal_pressed"
+        } else {
+            document.getElementById(char).className = "btn_marginal"
+        }
+       
+    })
+
+}
+
 const MyButton = (props) => {
     const { dispatch, calcSetting, calcState } = useContext(AppContext);
-    const specialChars = ['+', '-', '*', '/'];
     let handleClick = (e) => {
         if(e === 'C') { /* clear button pressed */
+            ColorPressedOperator(e)
             dispatch({
                 type: 'CLEAR_CONTENT',
                 });
@@ -47,6 +62,7 @@ const MyButton = (props) => {
                     }
                 } else {
                     /* operator */
+                    ColorPressedOperator(e);
                     if (calcState === 1){ 
                     dispatch({
                         type: 'REPLACE_OPERATOR',
@@ -84,7 +100,7 @@ const MyButton = (props) => {
     }
 
     return(
-        <button className={classO} onClick={() => handleClick(props.name)}>{props.name}</button>
+        <button className={classO} id={props.name} onClick={() => handleClick(props.name)}>{props.name}</button>
     )
 }
 export default MyButton;

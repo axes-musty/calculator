@@ -4,17 +4,15 @@ import { AppContext } from '../context/AppContext';
 import CalcResult from './CalcResult';
 
 const CalcButton = (props) => {
-    const { calcState, content, dispatch, equation, lastOperation } = useContext(AppContext);
+    const { calcState, dispatch, equation, lastOperation } = useContext(AppContext);
     const specialChars = ['+', '-', '*', '/'];
     let localLastOperation = ''
     let localResult = 0
     let handleClick = () => {
         switch (calcState){
             case 0:
-                alert ("Wpisz działanie do obliczenia!")
                 break
             case 1:
-                alert ("Wpisz operator!")
                 break
             case 2:
                 localResult = CalcResult(equation)
@@ -42,8 +40,6 @@ const CalcButton = (props) => {
                     });
                 break 
             case 3:
-                console.log('tutaj')
-                console.log(equation+lastOperation)
                 localResult = CalcResult(equation+lastOperation)
                 dispatch({
                     type: 'SET_CONTENT',
@@ -55,6 +51,7 @@ const CalcButton = (props) => {
                 });
                 break
             default:
+                console.log('Unhandled CalcState in CalcButton - value = ' + calcState)
                 break
         }
     }

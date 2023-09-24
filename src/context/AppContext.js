@@ -46,8 +46,6 @@ export const AppReducer = (state, action) => {
             return {
                 ...state,
             };
-            default:
-                return state;
         case 'SET_LAST_OPERATION':
             state.lastOperation = action.payload;
             return {
@@ -58,6 +56,9 @@ export const AppReducer = (state, action) => {
             return {
                 ...state,
             };
+
+            default:
+                return state;
     }
 }
 

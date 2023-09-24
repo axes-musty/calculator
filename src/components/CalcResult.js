@@ -8,11 +8,8 @@ let CalcResult = (localContent) => {
         let char = [...localContent][counter]
         if (['*', '/'].includes(char)){
             specialCharsMap.push([char, counter])
-            /* zamiast tego zrób liste znak + index i zacznij liczenie od srodkowego */
         }
     }
-    /* dla kazdego entry z powyzszej listy znajdz lewa strone i prawa strone i policz wynik */
-
     [...localContent].forEach(char => {
         if (specialChars.includes(char)){
             next_operation = char
@@ -45,8 +42,7 @@ let CalcResult = (localContent) => {
             next_operation = ''
         }
     });
-
-return(result);   
+    return(Math.floor(result,2));   
 }
 
 export default CalcResult;

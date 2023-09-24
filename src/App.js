@@ -1,13 +1,11 @@
-import React from 'react';
-import { AppProvider } from './context/AppContext';
-import test from './test/tests';
-import MyButton from './components/myButton';
-import CommandLine from './components/CommandLine';
-import CalcButton from './components/CalcButton';
+import React from 'react'
+import { AppProvider } from './context/AppContext'
+import MyButton from './components/myButton'
+import CommandLine from './components/CommandLine'
+import CalcButton from './components/CalcButton'
 
 const App = () => {
-    if (false) {test()}
-  return(
+  return (
     <AppProvider>
         <div className='container'>
             <div className='calculator'>
@@ -44,9 +42,9 @@ const App = () => {
                 </div>
             </div>
         </div>
-       
+
     </AppProvider>
   )
 }
 
-export default App;
+export default App

@@ -1,12 +1,12 @@
-import React, { useContext } from 'react'
-import '../App.css'
-import { AppContext } from '../context/AppContext'
+import React, { useContext } from 'react';
+import '../App.css';
+import { AppContext } from '../context/AppContext';
 
 const CommandLine = () => {
-  const { content } = useContext(AppContext)
+  const { content } = useContext(AppContext);
   return (
-            <span>{content}</span>
-  /* <input className='cmdline' placeholder='Operation'  type="text" value={content}></input> */
-  )
-}
-export default CommandLine
+    <span>{content}</span>
+    /* <input className='cmdline' placeholder='Operation'  type="text" value={content}></input> */
+  );
+};
+export default CommandLine;
